@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.simplyapps.swipelauncher.SettingsActivity"
+    tools:showIn="@layout/activity_settings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:src="@drawable/ic_theme"
+                android:id="@+id/theme_image"
+                tools:ignore="contentDescription"
+                android:tint="@color/colorPrimary"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="12dp"/>
+
+            <TextView
+                android:text="@string/theme"
+                style="@style/TextTitle"
+                android:id="@+id/theme"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:gravity="center_vertical"
+                android:layout_toEndOf="@id/theme_image"/>
+
+            <View
+                android:background="@color/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignStart="@id/theme"
+                android:layout_below="@id/theme"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trigger_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/trigger_color_text"
+                android:text="@string/trigger_color"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/trigger_color_button"
+                android:background="@drawable/circle_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/trigger_color_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trigger_width"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/trigger_width_text"
+                android:text="@string/trigger_width"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/trigger_width_button"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/trigger_width_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trigger_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/trigger_height_text"
+                android:text="@string/trigger_height"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/trigger_height_button"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/trigger_height_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trigger_offset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/trigger_offset_text"
+                android:text="@string/trigger_offset"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/trigger_offset_button"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/trigger_offset_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:text="@string/trigger_offset_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/trigger_offset_text"
+                android:layout_toStartOf="@id/trigger_offset_button"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/launcher_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/launcher_color_primary_text"
+                android:text="@string/launcher_color_primary"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:id="@+id/launcher_color_primary_button"
+                android:background="@drawable/circle_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/launcher_color_primary_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/launcher_color_accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/launcher_color_accent_text"
+                android:text="@string/launcher_color_accent"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:id="@+id/launcher_color_accent_button"
+                android:background="@drawable/circle_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/launcher_color_accent_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_gravity="center_vertical"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/launcher_max_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/launcher_max_height_text"
+                android:text="@string/launcher_max_height"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/launcher_max_height_button"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/launcher_max_height_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_pack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/icon_pack_text"
+                android:text="@string/default_icon_pack"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/icon_pack_button"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignEnd="@id/icon_pack_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:text="@string/default_icon_pack_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/icon_pack_text"
+                android:layout_toStartOf="@id/icon_pack_button"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_tint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/icon_tint_text"
+                android:text="@string/default_icon_tint"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:id="@+id/icon_tint_button"
+                android:background="@drawable/circle_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignEnd="@id/icon_tint_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:text="@string/default_icon_tint_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/icon_tint_text"
+                android:layout_toStartOf="@id/icon_tint_button"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_behavior"
+                android:id="@+id/behavior_image"
+                tools:ignore="contentDescription"
+                android:tint="@color/colorPrimary"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="12dp"/>
+
+            <TextView
+                android:text="@string/behavior"
+                style="@style/TextTitle"
+                android:id="@+id/behavior"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:gravity="center_vertical"
+                android:layout_toEndOf="@id/behavior_image"/>
+
+            <View
+                android:background="@color/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignStart="@id/behavior"
+                android:layout_below="@id/behavior"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/long_press_remove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/long_press_remove_text"
+                android:text="@string/long_press_remove"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="true"/>
+
+            <Switch
+                android:id="@+id/long_press_remove_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/long_press_remove_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:text="@string/long_press_remove_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/long_press_remove_text"
+                android:layout_toStartOf="@id/long_press_remove_switch"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/vibrate_on_long_press"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/vibrate_on_long_press_text"
+                android:text="@string/vibrate_on_long_press"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="true"/>
+
+            <Switch
+                android:id="@+id/vibrate_on_long_press_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/vibrate_on_long_press_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hover_trigger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/hover_trigger_text"
+                android:text="@string/hover_trigger"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="true"/>
+
+            <Switch
+                android:id="@+id/hover_trigger_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/hover_trigger_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:text="@string/hover_trigger_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/hover_trigger_text"
+                android:layout_toStartOf="@id/hover_trigger_switch"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/autostart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/autostart_text"
+                android:text="@string/autostart"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="true"/>
+
+            <Switch
+                android:id="@+id/autostart_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/autostart_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:text="@string/autostart_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/autostart_text"
+                android:layout_toStartOf="@id/autostart_switch"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/toggle_interruption_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:paddingStart="72dp">
+
+            <TextView
+                android:id="@+id/toggle_interruption_filter_text"
+                android:text="@string/toggle_interruption_filter"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="true"/>
+
+            <Switch
+                android:id="@+id/toggle_interruption_filter_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/toggle_interruption_filter_text"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:text="@string/toggle_interruption_filter_details"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/toggle_interruption_filter_text"
+                android:layout_toStartOf="@id/toggle_interruption_filter_switch"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

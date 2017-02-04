@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="colorpicker-1.6.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.rarepebble/colorpicker/1.6.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.rarepebble/colorpicker/1.6.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rarepebble/colorpicker/1.6.0/3b4411703b3775d490ee525af90d2689f3605c3d/colorpicker-1.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
