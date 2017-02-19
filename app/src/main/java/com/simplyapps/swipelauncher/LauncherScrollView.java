@@ -25,7 +25,7 @@ public class LauncherScrollView extends ScrollView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        SharedPreferences prefs = getContext().getSharedPreferences("com.simplyapps.swipelauncher", Context.MODE_PRIVATE);
+        SharedPreferences prefs = getContext().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
 
         heightMeasureSpec = MeasureSpec.makeMeasureSpec((prefs.getInt("launcherMaxHeight", 5) * 20) + 200, MeasureSpec.AT_MOST);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);

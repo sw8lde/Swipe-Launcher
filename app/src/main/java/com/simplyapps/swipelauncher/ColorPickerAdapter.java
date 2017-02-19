@@ -26,7 +26,7 @@ public class ColorPickerAdapter extends BaseAdapter {
         this.context = context;
         this.colorList = colorList;
 
-        SharedPreferences prefs = context.getSharedPreferences("com.simplyapps.swipelauncher", context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
         int color = prefs.getInt("triggerColor", ContextCompat.getColor(context, R.color.triggerColor));
 
         checkedItemPosition = -1;

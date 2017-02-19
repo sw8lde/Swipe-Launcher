@@ -35,6 +35,7 @@ import com.rarepebble.colorpicker.ColorPickerView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
@@ -151,7 +152,7 @@ public class SettingsActivity extends AppCompatActivity implements
     }
 
     public void initSettings() {
-        SharedPreferences prefs = getSharedPreferences("com.simplyapps.swipelauncher", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
         triggerColor = findViewById(R.id.trigger_color);
         triggerColor.setOnClickListener(this);
@@ -160,15 +161,15 @@ public class SettingsActivity extends AppCompatActivity implements
         triggerWidth = findViewById(R.id.trigger_width);
         triggerWidth.setOnClickListener(this);
         triggerWidthButton = (TextView) findViewById(R.id.trigger_width_button);
-        triggerWidthButton.setText(String.format("%d", ((prefs.getInt("triggerWidth", 4) + 1) * 5)));
+        triggerWidthButton.setText(String.format(Locale.US, "%d", ((prefs.getInt("triggerWidth", 4) + 1) * 5)));
         triggerHeight = findViewById(R.id.trigger_height);
         triggerHeight.setOnClickListener(this);
         triggerHeightButton = (TextView) findViewById(R.id.trigger_height_button);
-        triggerHeightButton.setText(String.format("%d", prefs.getInt("triggerHeight", 4) + 1));
+        triggerHeightButton.setText(String.format(Locale.US, "%d", prefs.getInt("triggerHeight", 4) + 1));
         triggerOffset = findViewById(R.id.trigger_offset);
         triggerOffset.setOnClickListener(this);
         triggerOffsetButton = (TextView) findViewById(R.id.trigger_offset_button);
-        triggerOffsetButton.setText(String.format("%d", prefs.getInt("triggerOffset", 0) * 10 - 50));
+        triggerOffsetButton.setText(String.format(Locale.US, "%d", prefs.getInt("triggerOffset", 0) * 10 - 50));
         launcherColorPrimary = findViewById(R.id.launcher_color_primary);
         launcherColorPrimary.setOnClickListener(this);
         launcherColorPrimaryButton = (Button) findViewById(R.id.launcher_color_primary_button);
@@ -180,7 +181,7 @@ public class SettingsActivity extends AppCompatActivity implements
         launcherMaxHeight = findViewById(R.id.launcher_max_height);
         launcherMaxHeight.setOnClickListener(this);
         launcherMaxHeightButton = (TextView) findViewById(R.id.launcher_max_height_button);
-        launcherMaxHeightButton.setText(String.format("%d", prefs.getInt("launcherMaxHeight", 5) * 20 + 200));
+        launcherMaxHeightButton.setText(String.format(Locale.US, "%d", prefs.getInt("launcherMaxHeight", 5) * 20 + 200));
         iconPack = findViewById(R.id.icon_pack);
         iconPack.setOnClickListener(this);
         iconPackButton = (TextView) findViewById(R.id.icon_pack_button);
@@ -315,10 +316,10 @@ public class SettingsActivity extends AppCompatActivity implements
 
     private void initColorPicker(final String setting) {
         final SharedPreferences prefs = getSharedPreferences(
-                "com.simplyapps.swipelauncher",
+                getPackageName(),
                 MODE_PRIVATE);
         final SharedPreferences.Editor editor = getSharedPreferences(
-                "com.simplyapps.swipelauncher",
+                getPackageName(),
                 MODE_PRIVATE).edit();
         final ColorPickerView picker;
         final AlertDialog.Builder builder;
@@ -377,7 +378,7 @@ public class SettingsActivity extends AppCompatActivity implements
                 ContextCompat.getColor(this, getResources().getIdentifier(
                         setting,
                         "color",
-                        "com.simplyapps.swipelauncher"))
+                        getPackageName()))
         );
         picker.setColor(color);
 
@@ -500,10 +501,10 @@ public class SettingsActivity extends AppCompatActivity implements
          */
 
         final SharedPreferences prefs = getSharedPreferences(
-                "com.simplyapps.swipelauncher",
+                getPackageName(),
                 MODE_PRIVATE);
         final SharedPreferences.Editor editor = getSharedPreferences(
-                "com.simplyapps.swipelauncher",
+                getPackageName(),
                 MODE_PRIVATE).edit();
         final NumberPicker picker;
         AlertDialog.Builder builder;
@@ -613,7 +614,7 @@ public class SettingsActivity extends AppCompatActivity implements
         }
 
         SharedPreferences.Editor editor = getSharedPreferences(
-                "com.simplyapps.swipelauncher",
+                getPackageName(),
                 MODE_PRIVATE).edit();
         editor.putBoolean(name, isChecked);
         editor.apply();

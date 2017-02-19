@@ -35,7 +35,7 @@ public class LauncherPopupWindow extends Dialog implements View.OnTouchListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_launcher);
 
-        prefs = getContext().getSharedPreferences("com.simplyapps.swipelauncher", Context.MODE_PRIVATE);
+        prefs = getContext().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
         toggleInterruptionFilter = prefs.getBoolean("toggleInterruptionFilter", false);
 
         LinearLayout screenBackground = (LinearLayout) findViewById(R.id.launcher_background);

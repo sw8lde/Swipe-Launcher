@@ -102,7 +102,7 @@ public class LauncherTriggerService extends Service implements
     }
 
     private void initSettings() {
-        SharedPreferences prefs = getSharedPreferences("com.simplyapps.swipelauncher", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
         longPressRemove = prefs.getBoolean("longPressRemove", true);
         hoverTrigger = prefs.getBoolean("hoverTrigger", false);
@@ -125,7 +125,7 @@ public class LauncherTriggerService extends Service implements
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        SharedPreferences prefs = getSharedPreferences("com.simplyapps.swipelauncher", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
         if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             triggerWidth = ((prefs.getInt("triggerWidth", 4) + 1) * widthPixels) / 20;
